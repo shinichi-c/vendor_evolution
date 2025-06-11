@@ -1,8 +1,8 @@
-PRODUCT_VERSION_MAJOR = 15
+PRODUCT_VERSION_MAJOR = 16
 PRODUCT_VERSION_MINOR = 0
 
 # Increase EVO Version with each major release.
-EVO_VERSION_BASE := 10.7
+EVO_VERSION_BASE := 11.0
 EVO_BUILD_TYPE ?= Unofficial
 
 ifeq ($(WITH_GMS),true)
