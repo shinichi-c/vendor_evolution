@@ -22,9 +22,9 @@ endif
 # Apps
 PRODUCT_PACKAGES += \
     AvatarPicker \
-    Backgrounds \
-    Glimpse \
     LatinIME
+#    Backgrounds \
+#    Glimpse \
 
 # Charger
 PRODUCT_PACKAGES += \
