@@ -9,7 +9,7 @@ endif
 # Pixel additions
 ifeq ($(WITH_GMS),true)
 $(call inherit-product, vendor/google/overlays/ThemeIcons/config.mk)
-$(call inherit-product, vendor/pixel-framework/config.mk)
+#$(call inherit-product, vendor/pixel-framework/config.mk)
 $(call inherit-product, vendor/pixel-style/config/common.mk)
 
 # Don't dexpreopt prebuilts. (For GMS).
@@ -77,12 +77,12 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 endif
 
 # Lineage-specific broadcast actions whitelist
-PRODUCT_COPY_FILES += \
-    vendor/lineage/config/permissions/lineage-sysconfig.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/lineage-sysconfig.xml
+#PRODUCT_COPY_FILES += \
+#    vendor/lineage/config/permissions/lineage-sysconfig.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/lineage-sysconfig.xml
 
 # Lineage-specific init rc file
-PRODUCT_COPY_FILES += \
-    vendor/lineage/prebuilt/common/etc/init/init.lineage-system_ext.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.lineage-system_ext.rc
+#PRODUCT_COPY_FILES += \
+#    vendor/lineage/prebuilt/common/etc/init/init.lineage-system_ext.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.lineage-system_ext.rc
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -97,12 +97,12 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:$(TARGET_COPY_OUT_PRODUCT)/usr/keylayout/Vendor_045e_Product_0719.kl
 
 # Component overrides
-PRODUCT_PACKAGES += \
-    lineage-component-overrides.xml
+#PRODUCT_PACKAGES += \
+#    lineage-component-overrides.xml
 
 # This is Lineage!
-PRODUCT_COPY_FILES += \
-    vendor/lineage/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.android.xml
+#PRODUCT_COPY_FILES += \
+#    vendor/lineage/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.android.xml
 
 # Audio service timeout
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -112,10 +112,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.control_privapp_permissions=log
 
-ifneq ($(TARGET_DISABLE_LINEAGE_SDK), true)
+#ifneq ($(TARGET_DISABLE_LINEAGE_SDK), true)
 # Lineage SDK
-include vendor/lineage/config/lineage_sdk_common.mk
-endif
+#include vendor/lineage/config/lineage_sdk_common.mk
+#endif
 
 ART_BUILD_TARGET_NDEBUG := false
 ART_BUILD_TARGET_DEBUG := false
@@ -161,58 +161,50 @@ PRODUCT_PACKAGES += \
     build-manifest
 
 # Lineage packages
-ifeq ($(PRODUCT_IS_ATV),)
-PRODUCT_PACKAGES += \
-    ExactCalculator \
-    Jelly
-endif
+#ifeq ($(PRODUCT_IS_ATV),)
+#PRODUCT_PACKAGES += \
+#    ExactCalculator \
+#    Jelly
+#endif
 
-ifeq ($(PRODUCT_IS_AUTOMOTIVE),)
-PRODUCT_PACKAGES += \
-    LineageParts \
-    LineageSetupWizard
-endif
+#ifeq ($(PRODUCT_IS_AUTOMOTIVE),)
+#PRODUCT_PACKAGES += \
+#    LineageParts \
+#    LineageSetupWizard
+#endif
 
-PRODUCT_PACKAGES += \
-    LineageSettingsProvider
+#PRODUCT_PACKAGES += \
+#    LineageSettingsProvider
 
-PRODUCT_COPY_FILES += \
-    vendor/lineage/prebuilt/common/etc/init/init.lineage-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.lineage-updater.rc
+#PRODUCT_COPY_FILES += \
+#    vendor/lineage/prebuilt/common/etc/init/init.lineage-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.lineage-updater.rc
 
 # Config
 PRODUCT_PACKAGES += \
     SimpleSettingsConfig
 
-# Disable default frame rate limit for games
-PRODUCT_PRODUCT_PROPERTIES += \
-    debug.graphics.game_default_frame_rate.disabled=true
-
-# Disable RescueParty due to high risk of data loss
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.sys.disable_rescue=true
+# LMOFreeForm
+#PRODUCT_PACKAGES += \
+#    LMOFreeform \
+#    LMOFreeformSidebar
 
 # Extra tools in Lineage
-PRODUCT_PACKAGES += \
-    bash \
-    curl \
-    getcap \
-    htop \
-    nano \
-    setcap \
-    vim
+#PRODUCT_PACKAGES += \
+#    bash \
+#    curl \
+#    getcap \
+#    htop \
+#    nano \
+#    setcap \
+#    vim
 
-PRODUCT_PACKAGES += \
-    nano_recovery
+#PRODUCT_PACKAGES += \
+#    nano_recovery
 
-# LMOFreeForm
-PRODUCT_PACKAGES += \
-    LMOFreeform \
-    LMOFreeformSidebar
-
-PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
-    system/bin/curl \
-    system/bin/getcap \
-    system/bin/setcap
+#PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+#    system/bin/curl \
+#    system/bin/getcap \
+#    system/bin/setcap
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
@@ -232,21 +224,21 @@ PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/bin/wipe-frp.sh:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/wipe-frp
 
 # Openssh
-PRODUCT_PACKAGES += \
-    scp \
-    sftp \
-    ssh \
-    sshd \
-    sshd_config \
-    ssh-keygen \
-    start-ssh
+#PRODUCT_PACKAGES += \
+#    scp \
+#    sftp \
+#    ssh \
+#    sshd \
+#    sshd_config \
+#    ssh-keygen \
+#    start-ssh
 
-PRODUCT_COPY_FILES += \
-    vendor/lineage/prebuilt/common/etc/init/init.openssh.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.openssh.rc
+#PRODUCT_COPY_FILES += \
+#    vendor/lineage/prebuilt/common/etc/init/init.openssh.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.openssh.rc
 
 # rsync
-PRODUCT_PACKAGES += \
-    rsync
+#PRODUCT_PACKAGES += \
+#    rsync
 
 ifeq ($(WITH_GMS),false)
 # Storage manager
@@ -257,6 +249,14 @@ endif
 # Default wifi country code
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.boot.wificountrycode?=00
+
+# Disable default frame rate limit for games
+PRODUCT_PRODUCT_PROPERTIES += \
+    debug.graphics.game_default_frame_rate.disabled=true
+
+# Disable RescueParty due to high risk of data loss
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.disable_rescue=true
 
 # These packages are excluded from user builds
 PRODUCT_PACKAGES_DEBUG += \
@@ -314,11 +314,11 @@ PRODUCT_PACKAGES += \
     PermissionControllerOverlay
 
 # Translations
-CUSTOM_LOCALES += \
-    ast_ES \
-    gd_GB \
-    cy_GB \
-    fur_IT
+#CUSTOM_LOCALES += \
+#    ast_ES \
+#    gd_GB \
+#    cy_GB \
+#    fur_IT
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/crowdin/overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/crowdin/overlay
