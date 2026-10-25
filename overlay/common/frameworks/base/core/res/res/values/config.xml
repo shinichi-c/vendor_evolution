@@ -581,4 +581,7 @@
     <string-array name="theming_defaults" translatable="false">
         <item>*|TONAL_SPOT|#0049c7</item>
     </string-array>
+
+    <!-- If AOD can show an ambient version of the wallpaper -->
+    <bool name="config_dozeSupportsAodWallpaper">true</bool>
 </resources>
